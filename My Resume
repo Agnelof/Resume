@@ -130,10 +130,7 @@ Your Name
       </motion.h2>
       <p className="mb-4">Feel free to reach out for opportunities or collaborations:</p>
       <ul className="space-y-2 text-gray-700">
-        <li>📧 you@email.com</li>
-        <li>🔗 linkedin.com/in/yourprofile</li>
-        <li>💻 github.com/yourprofile</li>
-      </ul>
+             </ul>
     </section>
   </main>
 
