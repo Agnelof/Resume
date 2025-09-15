@@ -1,0 +1,145 @@
+import { motion } from "framer-motion";
+export default function Portfolio() { return ( 
+{/* Header / Navigation */} 
+Your Name
+•	About
+•	Experience
+•	Skills
+•	Contact
+  <main className="max-w-5xl mx-auto p-6 space-y-24">
+    {/* Hero Section */}
+    <motion.section
+      initial={{ opacity: 0, y: 40 }}
+      animate={{ opacity: 1, y: 0 }}
+      transition={{ duration: 0.8 }}
+      className="flex flex-col items-center text-center pt-12"
+    >
+      <img
+        {/* src="https://via.placeholder.com/160" */}
+        alt="Profile"
+        className="w-40 h-40 rounded-full border-4 border-gray-200 shadow mb-6"
+      />
+      <h2 className="text-3xl font-bold mb-2">Your Name</h2>
+      <p className="text-gray-600 mb-4">Software Developer • Problem Solver • Innovator</p>
+      <a
+        href="#contact"
+        className="px-6 py-2 bg-blue-600 text-white rounded-full shadow hover:bg-blue-700 transition"
+      >
+        Get in Touch
+      </a>
+    </motion.section>
+
+    {/* About Section */}
+    <section id="about">
+      <motion.h2
+        initial={{ opacity: 0, x: -40 }}
+        whileInView={{ opacity: 1, x: 0 }}
+        transition={{ duration: 0.6 }}
+        viewport={{ once: true }}
+        className="text-2xl font-semibold border-b pb-2 mb-4"
+      >
+        About Me
+      </motion.h2>
+      <motion.p
+        initial={{ opacity: 0 }}
+        whileInView={{ opacity: 1 }}
+        transition={{ delay: 0.2 }}
+        viewport={{ once: true }}
+      >
+        Passionate developer with experience in building scalable web applications,
+        focusing on creating beautiful and performant user experiences. Adept at
+        collaborating across teams and always eager to learn new technologies.
+      </motion.p>
+    </section>
+
+    {/* Experience Section */}
+    <section id="experience">
+      <motion.h2
+        initial={{ opacity: 0, x: -40 }}
+        whileInView={{ opacity: 1, x: 0 }}
+        transition={{ duration: 0.6 }}
+        viewport={{ once: true }}
+        className="text-2xl font-semibold border-b pb-2 mb-6"
+      >
+        Experience
+      </motion.h2>
+      <div className="space-y-6">
+        {[{
+          role: "Frontend Developer @ TechCorp",
+          time: "2021 – Present",
+          desc: "Built responsive React applications and collaborated with designers to deliver modern, intuitive interfaces."
+        },{
+          role: "Web Developer Intern @ StartupX",
+          time: "2020 – 2021",
+          desc: "Developed internal tools with Node.js and improved site performance by 30% through optimization."
+        }].map((job, idx) => (
+          <motion.div
+            key={idx}
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6, delay: idx * 0.2 }}
+            viewport={{ once: true }}
+          >
+            <h3 className="font-bold text-lg">{job.role}</h3>
+            <p className="text-sm text-gray-500">{job.time}</p>
+            <p>{job.desc}</p>
+          </motion.div>
+        ))}
+      </div>
+    </section>
+
+    {/* Skills Section */}
+    <section id="skills">
+      <motion.h2
+        initial={{ opacity: 0, x: -40 }}
+        whileInView={{ opacity: 1, x: 0 }}
+        transition={{ duration: 0.6 }}
+        viewport={{ once: true }}
+        className="text-2xl font-semibold border-b pb-2 mb-6"
+      >
+        Skills
+      </motion.h2>
+      <div className="flex flex-wrap gap-3">
+        {["JavaScript", "React", "Node.js", "TailwindCSS", "SQL", "Git"].map(
+          (skill, idx) => (
+            <motion.span
+              key={skill}
+              initial={{ opacity: 0, scale: 0.8 }}
+              whileInView={{ opacity: 1, scale: 1 }}
+              transition={{ duration: 0.4, delay: idx * 0.1 }}
+              viewport={{ once: true }}
+              className="px-4 py-1 bg-blue-100 text-blue-700 rounded-full text-sm shadow"
+            >
+              {skill}
+            </motion.span>
+          )
+        )}
+      </div>
+    </section>
+
+    {/* Contact Section */}
+    <section id="contact" className="pb-12">
+      <motion.h2
+        initial={{ opacity: 0, x: -40 }}
+        whileInView={{ opacity: 1, x: 0 }}
+        transition={{ duration: 0.6 }}
+        viewport={{ once: true }}
+        className="text-2xl font-semibold border-b pb-2 mb-6"
+      >
+        Contact
+      </motion.h2>
+      <p className="mb-4">Feel free to reach out for opportunities or collaborations:</p>
+      <ul className="space-y-2 text-gray-700">
+        <li>📧 you@email.com</li>
+        <li>🔗 linkedin.com/in/yourprofile</li>
+        <li>💻 github.com/yourprofile</li>
+      </ul>
+    </section>
+  </main>
+
+  {/* Footer */}
+  <footer className="bg-gray-900 text-white text-center py-4 mt-12">
+    <p>&copy; {new Date().getFullYear()} Your Name. All rights reserved.</p>
+  </footer>
+</div>
+); }
